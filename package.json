@@ -1,0 +1,22 @@
+{
+  "name": "atlas",
+  "version": "0.0.1",
+  "description": "A bot named after the star, Atlas.",
+  "main": "atlas.js",
+  "scripts": {
+    "test": "ping"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LordNature/Atlas.git"
+  },
+  "keywords": [
+    "atlas"
+  ],
+  "author": "LordNature",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/LordNature/Atlas/issues"
+  },
+  "homepage": "https://github.com/LordNature/Atlas#readme"
+}

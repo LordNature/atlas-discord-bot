@@ -17,19 +17,29 @@ atlas.on("ready", function() {
   atlas.user.setGame("in space")
 })
 
-// to do make modular
+// Command Section - For now
+commands.ping = {
+	name: "ping",
+	desc: "Pong!",
+	exec: function(msg, args) {
+    msg.channel.sendMessage("Pong!")
+	}
+}
+
 atlas.on("message", msg => {
-  if(msg.content.startsWith(config.prefix + "help")) {
-    msg.channel.sendMessage("```List of commands:\n }help -- All commands\n }ping -- Responds pong and ms response time```")
-    //console.log("* [DEBUG_MSG]: " + msg.author.username + " has executed " + prefix + "help")
-  }
-  if(msg.content.startsWith(config.prefix + "debug")) {
-    var ping = Date.now()
-    msg.channel.sendMessage("```Debug Response:\n Status - " + atlas.status + "```")
-    var pong = Date.now()
-    var ms = pong - ping
-    msg.channel.sendMessage("```Response Time: " + ms +  "```")
-  }
+	if(msg.content.startsWith(config.prefix)) {
+		let cmd = msg.content.toLowerCase().split(" ")[0].substring(1),
+        args = msg.content.substring(cmd.length + 2)
+    if (commands[cmd] && commands[cmd].adminOnly == false) {
+      commands[cmd].exec(msg, args)
+    } else {
+      if(msg.author.id === '122805215043780609') {
+        commands[cmd].exec(msg, args)
+      } else {
+        msg.reply("You don't have the power to control me!")
+      }
+    }
+	}
 })
 
 //test stuff
@@ -38,6 +48,5 @@ atlas.on('message', msg => {
     msg.reply('Pong! '+ msg.author.id)
   }
 })
-
 
 atlas.login(config.bToken);

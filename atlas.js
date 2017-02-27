@@ -140,7 +140,7 @@ commands.setgame = {
 
 atlas.on("message", msg => {
   if(msg.content.startsWith(config.prefix)) {
-    let cmd = msg.content.toLowerCase().split(" ")[0].substring(1),
+    var cmd = msg.content.toLowerCase().split(" ")[0].substring(1),
         args = msg.content.substring(cmd.length + 2)
     if(commands[cmd] !== undefined) {
       if(commands[cmd].adminOnly == false) {

@@ -86,7 +86,7 @@ commands.purge = {
   desc: "Removes all messages.",
   adminOnly: true,
   exec: function(msg, args) {
-    msg.reply("This has been deprecated in favor of `" + config.prefix + "purge`.")
+    msg.reply("This has been deprecated in favor of `" + config.prefix + "prune`.")
   }
 }
 

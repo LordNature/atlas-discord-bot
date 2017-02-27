@@ -10,8 +10,8 @@ var fs = require('fs'),
 atlas.on("ready", function() {
   console.log("Atlas Molecular Structure Initiated...")
   console.log("Discord.js Version: " + discord.version)
-  console.log("Bot Token: " + config.bToken)
-  console.log("Client ID: " + config.clientId)
+  console.log("Bot Token: " + config.token)
+  console.log("Client ID: " + config.clientID)
   atlas.user.setStatus("online")
   atlas.user.setGame("in space")
 })
@@ -146,7 +146,7 @@ atlas.on("message", msg => {
       if(commands[cmd].adminOnly == false) {
         commands[cmd].exec(msg, args)
       } else {
-        if(msg.author.id === '122805215043780609') {
+        if(msg.author.id === config.ownerID) {
           commands[cmd].exec(msg, args)
         } else {
           msg.reply("You don't have the power to control me!")
@@ -156,6 +156,6 @@ atlas.on("message", msg => {
   }
 })
 
-atlas.login(config.bToken).then(() => {
+atlas.login(config.token).then(() => {
   console.log("Atlas Molecular Structure Complete")
 })

@@ -1,4 +1,6 @@
 {
-  "bToken": "Bot Token",
-  "clientId": "Client ID -- Used for inviting bot to servers"
+  "token": "Bot Token",
+  "clientID": "Client ID -- Used for inviting bot to servers",
+  "prefix": "}",
+  "ownerID": "The user ID of you, the owner."
 }

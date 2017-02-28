@@ -4,7 +4,8 @@
   "description": "A bot named after the star, Atlas.",
   "main": "atlas.js",
   "dependencies": {
-    "discord.js": "*"
+    "discord.js": "*",
+    "node-opus": "*"
   },
   "scripts": {
     "test": "ping"
